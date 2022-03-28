@@ -40,23 +40,6 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     //MARK: - For Date
     func datePicker() {
         
@@ -156,6 +139,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
     }
     
+    //MARK: - Local Notification
     func requestAuthForLocalNotifications(){
         notificationCenter.delegate = self
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
@@ -176,7 +160,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
                 content.title = "Complete your todo"
                 content.body = "Kesa diya phir"
                 content.sound = UNNotificationSound.default
-                // Set the date here when you want Notification
+                // Set the date and date here when you want Notification
 
                 let calendar = Calendar.current
                 let components = DateComponents(year: self.year, month: self.month, day: self.day, hour: self.hour, minute: self.minute)
