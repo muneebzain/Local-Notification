@@ -26,6 +26,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="dateTxtFieldPressed:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="iIq-lU-aAh"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DmN-Ul-5po">
                                         <rect key="frame" x="0.0" y="100" width="374" height="45"/>
@@ -34,6 +37,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="timeTxtFieldPressed:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="RDZ-tg-fCx"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>

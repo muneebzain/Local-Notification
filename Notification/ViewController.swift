@@ -9,7 +9,7 @@ import UIKit
 import UserNotifications
 
 
-class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate {
+class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     var year: Int?
     var day: Int?
@@ -23,22 +23,28 @@ class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationC
     @IBOutlet weak var dateTxtField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateTxtField.delegate = self
-        timeTxtField.delegate = self
+       
         requestAuthForLocalNotifications()
         
         
     }
     
     
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
+    @IBAction func dateTxtFieldPressed(_ sender: UITextField) {
         self.datePicker()
+    }
+    
+    
+    @IBAction func timeTxtFieldPressed(_ sender: UITextField) {
         self.timePicker()
     }
     
     
+    
+    
+    
+    
+    //MARK: - For Date
     func datePicker() {
         
         let datePicker = UIDatePicker()
@@ -89,7 +95,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationC
     }
     
     
-    
+    //MARK: - For Time
     func timePicker() {
         let datePicker = UIDatePicker()
 
@@ -161,10 +167,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UNUserNotificationC
 
                 let calendar = Calendar.current
                 let components = DateComponents(year: self.year, month: self.month, day: self.day, hour: self.hour, minute: self.minute)
-                
                 let date = calendar.date(from: components)
                 let comp2 = calendar.dateComponents([.year,.month,.day,.hour,.minute], from: date!)
-             
+                
                 let trigger = UNCalendarNotificationTrigger(dateMatching: comp2, repeats: false)
                 
                 //3. make a request
